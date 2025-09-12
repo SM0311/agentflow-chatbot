@@ -1,30 +1,46 @@
 
-
-
 <span style="font-size:12pt"><b>AgentFlow Chatbot</b></span>
 
-<span style="font-size:12pt"><b>What is this project?</b></span>
+<span style="font-size:12pt"><b>Overview</b></span>
 <span style="font-size:11pt">
-AgentFlow Chatbot is a modern conversational AI assistant built with Python. Developed by <b>SM0311</b>, this project leverages LangGraph and LangChain to create an agent-based chatbot that can reason, plan, and interact with users in natural language. The frontend is powered by Streamlit, providing a clean, interactive chat experience in your browser. Under the hood, it connects to OpenAI's large language models to generate smart, context-aware responses. If you've used ChatGPT, you'll find the streaming responses here feel just as smooth and engaging.
+AgentFlow Chatbot is a professional, multi-threaded conversational AI platform built with Python, LangGraph, LangChain, and Streamlit. It is designed for advanced, context-aware interactions, supporting multiple chat sessions, persistent history, and logical topic management. The backend leverages agent graphs for reasoning and planning, while the frontend offers a modern, user-friendly interface with real-time streaming and database-backed session management.
+</span>
+
+<span style="font-size:12pt"><b>Core Concepts & Architecture</b></span>
+<span style="font-size:11pt">
+<b>LangGraph Agent Backend:</b>
+- Utilizes LangGraph to build a stateful agent graph, with nodes and edges representing the flow of conversation and reasoning steps.
+- Integrates LangChain and OpenAI for LLM-powered responses, supporting multi-turn, tool-augmented conversations.
+- Implements session and thread management, allowing users to maintain multiple, persistent chat sessions.
+- Supports checkpointing and restoring conversations using in-memory or database storage (SQLite).
+
+<b>Streamlit Frontend:</b>
+- Sidebar UI for managing multiple chat threads, starting new chats, and switching between topics.
+- Real-time streaming of LLM responses for a natural, engaging chat experience.
+- Displays full conversation history and supports logical topic naming (first user message as topic).
+- Database integration for persistent thread and message storage, enabling long-term retrieval and organization.
 </span>
 
 <span style="font-size:12pt"><b>Key Features</b></span>
 <span style="font-size:11pt">
-- <b>Agent-based intelligence</b>: The chatbot isn't just a simple Q&A bot—it can use tools, remember context, and follow multi-step instructions thanks to LangGraph and LangChain.
-- <b>Streamlit interface</b>: Chat with the bot in a modern, responsive web UI. No complicated setup—just run and go.
-- <b>OpenAI integration</b>: Get high-quality, natural language answers powered by OpenAI's models.
-- <b>Real-time streaming</b>: Watch the bot's replies appear word-by-word, for a more human-like chat experience.
-- <b>Conversation history</b>: Your chat is saved, so the bot can keep track of the conversation and respond more intelligently.
+- Agent-based intelligence: Flexible, modular agent workflows for reasoning, planning, and tool use.
+- Multi-threaded chat: Manage multiple conversations, each with its own topic and history.
+- Logical topic naming: Automatically assigns a topic name to each chat based on the first user message.
+- Persistent history: Stores chat threads and messages in a database for future retrieval.
+- Real-time streaming: LLM responses are streamed word-by-word for a smooth, interactive experience.
+- OpenAI integration: High-quality, context-aware answers powered by OpenAI models.
+- Session management: Easily switch between chats, start new sessions, and revisit previous conversations.
 </span>
 
 <span style="font-size:12pt"><b>Tech Stack</b></span>
 <span style="font-size:11pt">
-- Python
-- Streamlit
-- LangGraph
-- LangChain
-- OpenAI API
-- python-dotenv (for managing secrets, if needed)
+- Python 3.x
+- Streamlit (frontend)
+- LangGraph (agent graph backend)
+- LangChain (LLM and tool integration)
+- OpenAI API (LLM)
+- SQLite (chat history database)
+- python-dotenv (environment variable management)
 </span>
 
 <span style="font-size:12pt"><b>Getting Started</b></span>
@@ -39,7 +55,7 @@ AgentFlow Chatbot is a modern conversational AI assistant built with Python. Dev
    python -m venv venv
    .\venv\Scripts\activate
    </pre>
-3. <b>Install the required packages</b>
+3. <b>Install dependencies</b>
    <pre>
    pip install -r requirements.txt
    </pre>
@@ -48,6 +64,8 @@ AgentFlow Chatbot is a modern conversational AI assistant built with Python. Dev
      <pre>
      OPENAI_API_KEY=your_openai_api_key
      </pre>
+5. <b>Database setup</b>
+   - The chatbot will automatically create and use a SQLite database (<code>chatbot.db</code>) for chat history.
 </span>
 
 <span style="font-size:12pt"><b>How to Use</b></span>
@@ -56,26 +74,34 @@ AgentFlow Chatbot is a modern conversational AI assistant built with Python. Dev
    <pre>
    streamlit run app.py
    </pre>
+   or for database-enabled frontend:
+   <pre>
+   streamlit run streamlit_frontend_database.py
+   </pre>
 2. <b>Open your browser</b>
    - Go to the local URL Streamlit provides (usually <code>http://localhost:8501</code>).
 3. <b>Start chatting!</b>
-   - Type your message and see the bot respond in real time.
+   - Type your message and see the bot respond in real time. Use the sidebar to switch between conversations, start new chats, and view chat history.
 </span>
 
 <span style="font-size:12pt"><b>Project Structure</b></span>
 <span style="font-size:11pt">
-- <code>app.py</code>: The Streamlit app and chat UI.
-- <code>LangGraph_backend.py</code>: The agent logic and backend code.
-- <code>LangGraph_frontend.py</code>: (Optional) Extra frontend features.
-- <code>requirements.txt</code>: All Python dependencies.
+- <code>app.py</code>: Main Streamlit app for chat UI.
+- <code>streamlit_frontend_database.py</code>: Streamlit frontend with database support for chat threads.
+- <code>langGraph_backend.py</code>: LangGraph agent logic, state graph, and LLM integration.
+- <code>langgraph_databse.py</code>: Backend/database logic for chat history and thread retrieval.
+- <code>requirements.txt</code>: Python dependencies.
 - <code>.gitignore</code>: Files and folders excluded from version control.
 - <code>README.md</code>: Project documentation.
+- <code>chatbot.db</code>: SQLite database for chat history (auto-generated).
 </span>
 
-<span style="font-size:12pt"><b>Customizing the Bot</b></span>
+<span style="font-size:12pt"><b>Customizing & Extending</b></span>
 <span style="font-size:11pt">
-- Want to change how the bot thinks or add new tools? Edit <code>LangGraph_backend.py</code>.
-- Want to tweak the chat interface? Modify <code>app.py</code>.
+- <b>Agent logic:</b> Edit <code>langGraph_backend.py</code> to change agent nodes, edges, and LLM configuration.
+- <b>Database features:</b> Modify <code>langgraph_databse.py</code> and <code>streamlit_frontend_database.py</code> for advanced thread management and persistent storage.
+- <b>Frontend UI:</b> Update <code>app.py</code> or <code>streamlit_frontend_database.py</code> to customize chat appearance and sidebar features.
+- <b>Session/thread logic:</b> Enhance session management, topic naming, and chat retrieval as needed.
 </span>
 
 <span style="font-size:12pt"><b>License</b></span>
