@@ -1,10 +1,11 @@
 
 
-<span style="font-size:12pt"><b>LangGraph Chatbot</b></span>
+
+<span style="font-size:12pt"><b>AgentFlow Chatbot</b></span>
 
 <span style="font-size:12pt"><b>What is this project?</b></span>
 <span style="font-size:11pt">
-LangGraph Chatbot is a modern conversational AI assistant built with Python. It uses LangGraph and LangChain to create an agent-based chatbot that can reason, plan, and interact with users in natural language. The frontend is powered by Streamlit, so you get a clean, interactive chat experience right in your browser. Under the hood, it connects to OpenAI's large language models to generate smart, context-aware responses. If you've used ChatGPT, you'll find the streaming responses here feel just as smooth and engaging.
+AgentFlow Chatbot is a modern conversational AI assistant built with Python. Developed by <b>SM0311</b>, this project leverages LangGraph and LangChain to create an agent-based chatbot that can reason, plan, and interact with users in natural language. The frontend is powered by Streamlit, providing a clean, interactive chat experience in your browser. Under the hood, it connects to OpenAI's large language models to generate smart, context-aware responses. If you've used ChatGPT, you'll find the streaming responses here feel just as smooth and engaging.
 </span>
 
 <span style="font-size:12pt"><b>Key Features</b></span>
@@ -30,8 +31,8 @@ LangGraph Chatbot is a modern conversational AI assistant built with Python. It 
 <span style="font-size:11pt">
 1. <b>Clone this repository</b>
    <pre>
-   git clone &lt;your-repo-url&gt;
-   cd LangGrap Chatbot
+   git clone https://github.com/SM0311/agentflow-chatbot.git
+   cd agentflow-chatbot
    </pre>
 2. <b>Set up your Python environment</b>
    <pre>
@@ -67,6 +68,8 @@ LangGraph Chatbot is a modern conversational AI assistant built with Python. It 
 - <code>LangGraph_backend.py</code>: The agent logic and backend code.
 - <code>LangGraph_frontend.py</code>: (Optional) Extra frontend features.
 - <code>requirements.txt</code>: All Python dependencies.
+- <code>.gitignore</code>: Files and folders excluded from version control.
+- <code>README.md</code>: Project documentation.
 </span>
 
 <span style="font-size:12pt"><b>Customizing the Bot</b></span>
@@ -90,5 +93,5 @@ MIT License—free to use, modify, and share.
 
 <span style="font-size:12pt"><b>Questions?</b></span>
 <span style="font-size:11pt">
-If you have any questions or need help, feel free to reach out to the project maintainer.
+If you have any questions or need help, feel free to open an issue on GitHub or contact <b>SM0311</b> directly.
 </span>
