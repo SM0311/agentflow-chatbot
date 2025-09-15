@@ -34,7 +34,7 @@ AgentFlow Chatbot is a professional, multi-threaded conversational AI platform b
 
 <span style="font-size:12pt"><b>Tech Stack</b></span>
 <span style="font-size:11pt">
-- Python 3.x
+- Python 3.10
 - Streamlit (frontend)
 - LangGraph (agent graph backend)
 - LangChain (LLM and tool integration)
