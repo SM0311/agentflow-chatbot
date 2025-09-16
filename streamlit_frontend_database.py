@@ -44,7 +44,14 @@ if 'thread_names' not in st.session_state:
     st.session_state['thread_names'] = {}
 
 
-CONFIG = {'configurable': {'thread_id': st.session_state['thread_id']}}
+#CONFIG = {'configurable': {'thread_id': st.session_state['thread_id']}}
+
+CONFIG = {'configurable': {'thread_id': st.session_state['thread_id']},
+          'metadata': {
+              'thread_id':st.session_state['thread_id']
+          },
+          "run_name":'chat_run',
+}
 
 
 # *************************** Sidebar UI ****************************** #

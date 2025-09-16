@@ -31,6 +31,9 @@ AgentFlow Chatbot is a professional, multi-threaded conversational AI platform b
 - OpenAI integration: High-quality, context-aware answers powered by OpenAI models.
 - Session management: Easily switch between chats, start new sessions, and revisit previous conversations.
 </span>
+<span style="font-size:11pt">
+- <b>LangSmith (LangChain Tracing) integration:</b> Enables advanced tracing, debugging, and experiment tracking for all LLM and agent runs via LangChain's Smith platform.
+</span>
 
 <span style="font-size:12pt"><b>Tech Stack</b></span>
 <span style="font-size:11pt">
@@ -41,6 +44,9 @@ AgentFlow Chatbot is a professional, multi-threaded conversational AI platform b
 - OpenAI API (LLM)
 - SQLite (chat history database)
 - python-dotenv (environment variable management)
+</span>
+<span style="font-size:11pt">
+- LangSmith (LangChain Tracing) for experiment tracking and debugging
 </span>
 
 <span style="font-size:12pt"><b>Getting Started</b></span>
@@ -64,7 +70,18 @@ AgentFlow Chatbot is a professional, multi-threaded conversational AI platform b
      <pre>
      OPENAI_API_KEY=your_openai_api_key
      </pre>
-5. <b>Database setup</b>
+</span>
+<span style="font-size:11pt">
+5. <b>LangSmith (LangChain Tracing) setup (optional but recommended)</b>
+   - To enable advanced tracing and experiment tracking, add the following to your <code>.env</code> file:
+     <pre>
+     LANGCHAIN_TRACING="true"
+     LANGCHAIN_ENDPOINT='https://api.smith.langchain.com'
+     LANGCHAIN_API_KEY='your_langsmith_api_key'
+     LANGCHAIN_PROJECT='your_project_name'
+     </pre>
+   - Get your API key and project name from <a href="https://smith.langchain.com">smith.langchain.com</a>.
+6. <b>Database setup</b>
    - The chatbot will automatically create and use a SQLite database (<code>chatbot.db</code>) for chat history.
 </span>
 
@@ -102,6 +119,9 @@ AgentFlow Chatbot is a professional, multi-threaded conversational AI platform b
 - <b>Database features:</b> Modify <code>langgraph_databse.py</code> and <code>streamlit_frontend_database.py</code> for advanced thread management and persistent storage.
 - <b>Frontend UI:</b> Update <code>app.py</code> or <code>streamlit_frontend_database.py</code> to customize chat appearance and sidebar features.
 - <b>Session/thread logic:</b> Enhance session management, topic naming, and chat retrieval as needed.
+</span>
+<span style="font-size:11pt">
+- <b>LangSmith/Tracing:</b> For advanced debugging and experiment tracking, use the LangSmith dashboard to view traces and results of all LLM and agent runs.
 </span>
 
 <span style="font-size:12pt"><b>License</b></span>
