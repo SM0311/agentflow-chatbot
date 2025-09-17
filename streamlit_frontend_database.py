@@ -115,7 +115,7 @@ if user_input:
         ):
             full_response += message_chunk.content
             response_placeholder.markdown(full_response)  # Update response in place
-            time.sleep(0.05)  # Slow down streaming for effect
+            time.sleep(0.05)  # Slow down streaming for effect like taking .5 sec pause before generating next token.
 
             # Set topic name for new thread using first user message
             if thread_id not in st.session_state['thread_names'] and len(st.session_state['message_history']) == 1:
